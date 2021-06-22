@@ -30,6 +30,8 @@ The codes borrow heavily from https://github.com/YoYo000/MVSNet and https://gith
 
 We use Tensorflow==1.13.1, cuda==10.0. 
 
+Please first download the pretrained weights of VGG19 "imagenet-vgg-verydeep-19.mat" [here](https://www.vlfeat.org/matconvnet/pretrained/#downloading-the-pre-trained-models), and put it under the folder of "Perloss". This is for the perceptual loss. 
+
 To train the model, please run:
 
 python trainNVS.py --data_root_dir $YOUR_DATA_ROOT_DIR --dataset_name TanksandTemples --view_num $VIEW_NUM --max_d $MAX_D --max_w 448 --max_h 256
@@ -64,10 +66,13 @@ python metrics_tf.py --dataset_name DTU --view_num $VIEW_NUM --max_d $MAX_D --ma
 
 
 
+
+
 ### Models:
 Our trained model is available in [here](https://anu365-my.sharepoint.com/:u:/g/personal/u6293587_anu_edu_au/EbtzMMMQLtRAj2UuWLYXoeYBpjnocjkAL-hsKNVG1NQUGw?e=gRhtfL).
 
-
+### Tensorflow 2.0
+If you are using tensorflow>=2.0, please refer to [here](https://www.tensorflow.org/guide/migrate) to update the codes. 
 
 ### Publications
 This work is published in CVPR 2021.  
