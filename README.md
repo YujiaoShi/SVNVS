@@ -50,6 +50,7 @@ For testing on the DTU dataset:
 
 python testNVS.py --data_root_dir $YOUR_DATA_ROOT_DIR --dataset_name DTU --view_num $VIEW_NUM --max_d $MAX_D --max_w 320 --max_h 256 --output_dir $YOUR_OUTPUT_DIR 
 
+## SSIM and PSNR
 For evaluation on the Tanks and Temples:
 
 python metrics_tf.py --dataset_name TanksandTemples --view_num $VIEW_NUM --max_d $MAX_D --max_w 448 --max_h 256 --output_dir $YOUR_OUTPUT_DIR --dataset Truck
@@ -64,8 +65,24 @@ For evaluation on the DTU dataset:
 
 python metrics_tf.py --dataset_name DTU --view_num $VIEW_NUM --max_d $MAX_D --max_w 320 --max_h 256 --output_dir $YOUR_OUTPUT_DIR
 
+## LIPIS
+The codes for LIPIS evaluation are from [LIPIS](https://github.com/richzhang/PerceptualSimilarity.git). 
+Please install the package first:  pip install lpips
+we use torch==1.4.0, torchvision==0.5.0
 
+For evaluation on the Tanks and Temples:
 
+python metrics_LIPIS.py --dataset_name TanksandTemples --view_num $VIEW_NUM --max_d $MAX_D --max_w 448 --max_h 256 --output_dir $YOUR_OUTPUT_DIR --dataset Truck
+
+python metrics_LIPIS.py --dataset_name TanksandTemples --view_num $VIEW_NUM --max_d $MAX_D --max_w 448 --max_h 256 --output_dir $YOUR_OUTPUT_DIR --dataset Train
+
+python metrics_LIPIS.py --dataset_name TanksandTemples --view_num $VIEW_NUM --max_d $MAX_D --max_w 448 --max_h 256 --output_dir $YOUR_OUTPUT_DIR --dataset M60
+
+python metrics_LIPIS.py --dataset_name TanksandTemples --view_num $VIEW_NUM --max_d $MAX_D --max_w 448 --max_h 256 --output_dir $YOUR_OUTPUT_DIR --dataset Playground
+
+For evaluation on the DTU dataset:
+
+python metrics_LIPIS.py --dataset_name DTU --view_num $VIEW_NUM --max_d $MAX_D --max_w 320 --max_h 256 --output_dir $YOUR_OUTPUT_DIR
 
 
 ### Models:
